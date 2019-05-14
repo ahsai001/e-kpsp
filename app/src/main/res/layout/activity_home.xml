@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".HomeActivity">
+    <ScrollView
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:text="KPSP"
+                android:textSize="60dp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:text="Kuesioner Pra Skrining Perkembangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="22dp"
+                android:src="@drawable/greenearth"
+                android:layout_width="150dp"
+                android:layout_height="150dp" />
+
+            <Button
+                android:text="Ketentuan"
+                android:textAllCaps="false"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnMulaiKPSP"
+                android:text="Mulai KPSP"
+                android:textAllCaps="false"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:text="Laporan"
+                android:textAllCaps="false"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:text="Tentang"
+                android:textAllCaps="false"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
