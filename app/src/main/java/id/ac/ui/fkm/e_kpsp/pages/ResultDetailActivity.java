@@ -21,6 +21,13 @@ public class ResultDetailActivity extends AppCompatActivity {
         String totalJawabanYaString = getIntent().getStringExtra("total_jawaban_ya_string");
         String totalJawabanTidakString = getIntent().getStringExtra("total_jawaban_tidak_string");
 
+
+        getSupportActionBar().setTitle("KPSP");
+        getSupportActionBar().setSubtitle("Rincian Hasil Perkembangan Anak");
+
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         TextView tvTitle = findViewById(R.id.tvTitle);
         TextView tvUsia = findViewById(R.id.tvUsia);
         TextView tvContent1 = findViewById(R.id.tvContent1);

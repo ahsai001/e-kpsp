@@ -16,6 +16,9 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         Button btnMulaiKPSP = findViewById(R.id.btnMulaiKPSP);
+        Button btnTentang = findViewById(R.id.btnTentang);
+        Button btnLaporan = findViewById(R.id.btnLaporan);
+        Button btnKetentuan = findViewById(R.id.btnKetentuan);
 
         btnMulaiKPSP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,5 +27,28 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        btnTentang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnLaporan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        btnKetentuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
     }
 }

@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pages.ResultDetailActivity"></activity>
+        <activity android:name=".pages.ReportActivity"></activity>
+        <activity android:name=".pages.HowToActivity" />
+        <activity android:name=".pages.AboutActivity" />
+        <activity android:name=".pages.ResultDetailActivity" />
         <activity android:name=".pages.ResultActivity" />
         <activity android:name=".pages.KPSPActivity" />
         <activity android:name=".pages.FormActivity" />
