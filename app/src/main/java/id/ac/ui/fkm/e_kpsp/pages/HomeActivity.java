@@ -31,21 +31,24 @@ public class HomeActivity extends AppCompatActivity {
         btnTentang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
+                startActivity(intent);
             }
         });
 
         btnLaporan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(HomeActivity.this, ReportActivity.class);
+                startActivity(intent);
             }
         });
 
         btnKetentuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(HomeActivity.this, HowToActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -98,9 +98,10 @@
 
         <Button
             android:id="@+id/btnLanjut"
+            android:layout_marginTop="32dp"
             style="@style/Widget.AppCompat.Button.Colored"
             android:textAllCaps="false"
-            android:layout_width="194dp"
+            android:layout_width="250dp"
             android:layout_gravity="end"
             android:layout_height="wrap_content"
             android:text="Lanjut" />

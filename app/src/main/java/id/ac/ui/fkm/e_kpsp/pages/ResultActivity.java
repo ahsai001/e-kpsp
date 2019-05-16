@@ -13,17 +13,29 @@ import org.w3c.dom.Text;
 import java.util.List;
 
 import id.ac.ui.fkm.e_kpsp.R;
+import id.ac.ui.fkm.e_kpsp.databases.DataSource;
+
+import static id.ac.ui.fkm.e_kpsp.Constant.HASIL_MERAGUKAN;
+import static id.ac.ui.fkm.e_kpsp.Constant.HASIL_PENYIMPANGAN;
+import static id.ac.ui.fkm.e_kpsp.Constant.HASIL_SESUAI;
+import static id.ac.ui.fkm.e_kpsp.Constant.PASIEN_ID;
+import static id.ac.ui.fkm.e_kpsp.Constant.RESULT_ARRAY;
+import static id.ac.ui.fkm.e_kpsp.Constant.USIA;
 
 public class ResultActivity extends AppCompatActivity {
     private int usia;
+    private long pasienId;
+    private int hasilId;
     private String jawabanTidakString = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        usia = getIntent().getIntExtra("usia", -1);
-        boolean[] resultArray = getIntent().getBooleanArrayExtra("result_array");
+        usia = getIntent().getIntExtra(USIA, -1);
+        pasienId = getIntent().getLongExtra(PASIEN_ID, -1);
+
+        boolean[] resultArray = getIntent().getBooleanArrayExtra(RESULT_ARRAY);
 
         getSupportActionBar().setTitle("KPSP");
         getSupportActionBar().setSubtitle("Hasil Perkembangan Anak");
@@ -57,15 +69,18 @@ public class ResultActivity extends AppCompatActivity {
             //sesuai
             tvTitle.setText("Sesuai (S)");
             tvContent.setText("Selamat perkembangan anak anda sesuai. Teruskan polah asuh dan ikutkan dalam kegiatan posyandu.");
+            hasilId = HASIL_SESUAI;
         } else if(totalJawabanYa >= 7){
             //meragukan
             tvTitle.setText("Meragukan (M)");
             tvContent.setText("Pantau terus perkembangan anak anda. Cari kemungkinan penyakit, ulangi uji KPSP 2 minggu lagi. " +
                     "Jika masih meragukan, segera rujuk ke RS atau poli anak.");
+            hasilId = HASIL_MERAGUKAN;
         } else {
             //penyimpangan
             tvTitle.setText("Penyimpangan (P)");
             tvContent.setText("Ada penyimpangan dalam perkembangan anak anda, segera rujuk ke RS atau poli anak.");
+            hasilId = HASIL_PENYIMPANGAN;
         }
 
         tvUsia.setText("(Umur "+usia+" bulan)");
@@ -73,11 +88,12 @@ public class ResultActivity extends AppCompatActivity {
         tvJawabanYa.setText("Jawaban Ya : "+totalJawabanYa);
         tvJawabanTidak.setText("Jawaban Tidak : "+totalJawabanTidak);
 
-
-
         btnRincian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                DataSource.getInstance(ResultActivity.this).saveHistory(pasienId, usia, "", "",
+                        hasilId);
+
                 Intent intent = new Intent(ResultActivity.this, ResultDetailActivity.class);
                 intent.putExtra("title", tvTitle.getText().toString());
                 intent.putExtra("usia", usia);
@@ -85,6 +101,7 @@ public class ResultActivity extends AppCompatActivity {
                 intent.putExtra("total_jawaban_ya_string", tvJawabanYa.getText().toString());
                 intent.putExtra("total_jawaban_tidak_string", tvJawabanTidak.getText().toString());
                 startActivity(intent);
+
 
                 finish();
             }

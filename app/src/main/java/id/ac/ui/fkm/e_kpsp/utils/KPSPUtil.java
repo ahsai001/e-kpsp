@@ -16,7 +16,7 @@ public class KPSPUtil {
                 return selectedMonth;
             }
         }
-        return -1;
+        return usia;
     }
 
     public static int getNextMonthOf(int usia){
@@ -27,6 +27,6 @@ public class KPSPUtil {
                 return selectedMonth;
             }
         }
-        return -1;
+        return usia;
     }
 }

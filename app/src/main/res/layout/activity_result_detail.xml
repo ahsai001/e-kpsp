@@ -1,77 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".pages.ResultActivity">
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:background="@drawable/border1"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:id="@+id/tvTitle"
-            android:text="Sesuai (S)"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/tvUsia"
-            android:text="(Umur x bulan)"
-            android:textSize="14sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:id="@+id/tvContent1"
-            android:layout_marginTop="30dp"
-            android:text="faksdjlfa faklsdjf aklsdfkasdj kfas dkfa skdfj akldsjf aksdj flaksjd fajs dfkaj sdkf akds fakd fakd fak dsfjal dkfja dfja dfjak dfa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"/>
-
-        <TextView
-            android:id="@+id/tvContent2"
-            android:text="4 5 6"
-            android:textSize="40dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/border1"
             android:gravity="center_horizontal"
-            android:textStyle="bold"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"/>
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tvTitle"
+                android:text="Sesuai (S)"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvUsia"
+                android:text="(Umur x bulan)"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/tvContent3"
-            android:text="faksdjlfa faklsdjf aklsdfkasdj kfas dkfa skdfj akldsjf aksdj flaksjd fajs dfkaj sdkf akds fakd fakd fak dsfjal dkfja dfja dfjak dfa"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvContent1"
+                android:layout_marginTop="30dp"
+                android:text="faksdjlfa faklsdjf aklsdfkasdj kfas dkfa skdfj akldsjf aksdj flaksjd fajs dfkaj sdkf akds fakd fakd fak dsfjal dkfja dfja dfjak dfa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/tvContent2"
+                android:text="4 5 6"
+                android:textSize="40dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/tvContent3"
+                android:text="faksdjlfa faklsdjf aklsdfkasdj kfas dkfa skdfj akldsjf aksdj flaksjd fajs dfkaj sdkf akds fakd fakd fak dsfjal dkfja dfja dfjak dfa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+            <TextView
+                android:id="@+id/tvJawabanYa"
+                android:text="Jawaban ya : 10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tvJawabanTidak"
+                android:text="Jawaban tidak : 0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btnHome"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="250dp"
+            android:layout_marginTop="32dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"/>
-        <TextView
-            android:id="@+id/tvJawabanYa"
-            android:text="Jawaban ya : 10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/tvJawabanTidak"
-            android:text="Jawaban tidak : 0"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_gravity="center_horizontal"
+            android:text="Menu Utama"
+            android:textAllCaps="false"/>
     </LinearLayout>
-
-
-    <Button
-        android:id="@+id/btnHome"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="200dp"
-        android:layout_marginTop="16dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Menu Utama"
-        android:textAllCaps="false"/>
-</LinearLayout>
+</ScrollView>

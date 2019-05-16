@@ -18,6 +18,10 @@ import id.ac.ui.fkm.e_kpsp.databases.DataSource;
 import id.ac.ui.fkm.e_kpsp.models.KPSP;
 import id.ac.ui.fkm.e_kpsp.utils.KPSPUtil;
 
+import static id.ac.ui.fkm.e_kpsp.Constant.PASIEN_ID;
+import static id.ac.ui.fkm.e_kpsp.Constant.RESULT_ARRAY;
+import static id.ac.ui.fkm.e_kpsp.Constant.USIA;
+
 public class KPSPActivity extends AppCompatActivity {
     private List<KPSP> kpspList;
     private TextView tvPertanyaan;
@@ -26,7 +30,11 @@ public class KPSPActivity extends AppCompatActivity {
     private Button btnTidak;
     private Button btnYa;
 
-    int indexPertanyaan = 0;
+    private int indexPertanyaan = 0;
+
+
+    private int usia;
+    private long pasienId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +42,8 @@ public class KPSPActivity extends AppCompatActivity {
         setContentView(R.layout.activity_kpsp);
 
 
-        final int usia = getIntent().getIntExtra("usia", -1);
+        usia = getIntent().getIntExtra(USIA, -1);
+        pasienId = getIntent().getLongExtra(PASIEN_ID, -1);
 
         getSupportActionBar().setTitle("KPSP");
         getSupportActionBar().setSubtitle("Umur "+usia+" bulan");
@@ -61,7 +70,7 @@ public class KPSPActivity extends AppCompatActivity {
 
                 if(indexPertanyaan+1 >= kpspList.size()){
                     //goto result
-                    saveAndGotoResultPage(usia, resultArray);
+                    gotoResultPage(usia, resultArray);
                 } else {
                     indexPertanyaan++;
                     loadData();
@@ -76,7 +85,7 @@ public class KPSPActivity extends AppCompatActivity {
 
                 if(indexPertanyaan+1 >= kpspList.size()){
                     //goto result
-                    saveAndGotoResultPage(usia, resultArray);
+                    gotoResultPage(usia, resultArray);
                 } else {
                     indexPertanyaan++;
                     loadData();
@@ -97,13 +106,12 @@ public class KPSPActivity extends AppCompatActivity {
         }
     }
 
-    private void saveAndGotoResultPage(int usia, boolean[] resultArray){
-        //save to database
-
+    private void gotoResultPage(int usia, boolean[] resultArray){
         //go to result page
         Intent intent = new Intent(KPSPActivity.this, ResultActivity.class);
-        intent.putExtra("usia", usia);
-        intent.putExtra("result_array", resultArray);
+        intent.putExtra(USIA, usia);
+        intent.putExtra(PASIEN_ID, pasienId);
+        intent.putExtra(RESULT_ARRAY, resultArray);
         startActivity(intent);
 
         finish();
