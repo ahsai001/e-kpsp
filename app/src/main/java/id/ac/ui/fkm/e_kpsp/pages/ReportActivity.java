@@ -47,9 +47,13 @@ public class ReportActivity extends AppCompatActivity {
                         new MonthPickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(int selectedMonth, int selectedYear) {
-                                tvStringDate.setText((selectedMonth+1)+"-"+selectedYear);
+                                String monthYear = (selectedMonth+1)+"-"+selectedYear;
+                                if(monthYear.length() < 7){
+                                    monthYear = "0"+monthYear;
+                                }
+                                tvStringDate.setText(monthYear);
 
-                                Statistic statistic = DataSource.getInstance(ReportActivity.this).getStatistic((selectedMonth+1)+"-"+selectedYear);
+                                Statistic statistic = DataSource.getInstance(ReportActivity.this).getStatistic(monthYear);
 
                                 tvSesuai.setText("Jumlah Sesuai : " + statistic.getJumlahSesuai());
                                 tvMeragukan.setText("Jumlah Meragukan : " + statistic.getJumlahMeragukan());

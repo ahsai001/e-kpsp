@@ -24,6 +24,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:textAllCaps="false"
             android:id="@+id/btnChooseDate"
             android:text="Pilih bulan"
             style="@style/Widget.AppCompat.Button.Colored"
