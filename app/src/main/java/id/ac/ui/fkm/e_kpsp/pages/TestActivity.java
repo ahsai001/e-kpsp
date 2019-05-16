@@ -1,13 +1,15 @@
-package id.ac.ui.fkm.e_kpsp;
+package id.ac.ui.fkm.e_kpsp.pages;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ResultActivity extends AppCompatActivity {
+import id.ac.ui.fkm.e_kpsp.R;
+
+public class TestActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_result);
+        setContentView(R.layout.activity_test);
     }
 }

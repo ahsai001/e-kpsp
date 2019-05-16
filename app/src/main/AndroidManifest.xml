@@ -9,11 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ResultActivity"></activity>
-        <activity android:name=".KPSPActivity" />
-        <activity android:name=".FormActivity" />
+        <activity android:name=".pages.ResultDetailActivity"></activity>
+        <activity android:name=".pages.ResultActivity" />
+        <activity android:name=".pages.KPSPActivity" />
+        <activity android:name=".pages.FormActivity" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".pages.HomeActivity"
             android:theme="@style/AppTheme.Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestActivity" />
+        <activity android:name=".pages.TestActivity" />
     </application>
 
 </manifest>

@@ -1,10 +1,12 @@
-package id.ac.ui.fkm.e_kpsp;
+package id.ac.ui.fkm.e_kpsp.pages;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import id.ac.ui.fkm.e_kpsp.R;
 
 public class HomeActivity extends AppCompatActivity {
 
