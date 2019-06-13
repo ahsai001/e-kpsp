@@ -28,6 +28,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <ImageView
+                android:visibility="invisible"
                 android:layout_marginTop="22dp"
                 android:layout_marginBottom="22dp"
                 android:src="@drawable/greenearth"
