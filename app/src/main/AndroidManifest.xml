@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.ahsailabs.ui.fkm.e_kpsp.pages.PasienListActivity"></activity>
+        <activity android:name="com.ahsailabs.ui.fkm.e_kpsp.pages.PasienListActivity" />
         <activity android:name="com.ahsailabs.ui.fkm.e_kpsp.pages.ReportActivity" />
         <activity android:name="com.ahsailabs.ui.fkm.e_kpsp.pages.HowToActivity" />
         <activity android:name="com.ahsailabs.ui.fkm.e_kpsp.pages.AboutActivity" />
@@ -21,7 +21,8 @@
         <activity android:name="com.ahsailabs.ui.fkm.e_kpsp.pages.FormActivity" />
         <activity
             android:name="com.ahsailabs.ui.fkm.e_kpsp.pages.HomeActivity"
-            android:theme="@style/AppTheme.Home">
+            android:theme="@style/AppTheme.Home"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
